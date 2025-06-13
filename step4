@@ -1,3 +1,5 @@
+--Добавление новой книги вместе с её автором
+
 BEGIN TRANSACTION;
 
 INSERT INTO Authors (name, nationality)
@@ -16,7 +18,7 @@ COMMIT;
 
 
 
-
+-- Обновление email-адоеса одного из читателей
 
 UPDATE Readers
 SET email = 'new.email@example.com'
@@ -26,7 +28,7 @@ WHERE library_card_id = 'ID_Читательского_Билета';
 
 
 
-
+-- Удаление книги,которой больше нет в библиотеке, предварительно обработав связанные с ней выдачи
 
 DO $$
 DECLARE
